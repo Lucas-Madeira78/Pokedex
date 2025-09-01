@@ -223,6 +223,11 @@ Please change the parent <Route path="${G}"> to <Route path="${G==="/"?"*":`${G}
         margin: 0 30px;
         font-size: 12px;
     }
+
+    @media (max-width: 320px) {
+        margin: 0 20px;
+        font-size: 11px;
+    }
 `,KE=({pokemon:a})=>{const[i,o]=C.useState();return C.useEffect(()=>{a&&(async()=>{try{const f=(await wy(a==null?void 0:a.abilities[0].ability.url)).data.effect_entries.find(h=>h.language.name==="en");f.effect.length>195?o(f.effect.slice(0,f.effect.indexOf(".")+1)):o(f.effect)}catch(s){console.error("Erro ao buscar Ability: ",s)}})()},[a]),Q.jsxs(Q.Fragment,{children:[Q.jsxs(QE,{children:[Q.jsx(ZE,{src:XE,alt:"ability"}),Q.jsx(kE,{children:a==null?void 0:a.abilities[0].ability.name})]}),Q.jsx(VE,{children:i})]})},JE=_t(br)`
     display: flex;
     justify-content: center;
