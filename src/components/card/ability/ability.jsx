@@ -49,6 +49,11 @@ const AbilityText = styled.p`
         margin: 0 30px;
         font-size: 12px;
     }
+
+    @media (max-width: 320px) {
+        margin: 0 20px;
+        font-size: 11px;
+    }
 `
 
 const Ability = ({ pokemon }) => {
