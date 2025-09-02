@@ -62,7 +62,6 @@ const PokemonList = () => {
                 setPokemonList(data)                
             }
         }
-        console.log(location.state?.id);
         fetchPokemonData(); 
     }, [limit, filterSelect])
 
