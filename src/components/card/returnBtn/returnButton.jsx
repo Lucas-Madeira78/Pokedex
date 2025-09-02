@@ -32,7 +32,7 @@ const Button = styled(Link)`
         font-size: 20px;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 360px) {
         margin-bottom: 25px;
     }
 `

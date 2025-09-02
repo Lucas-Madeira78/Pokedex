@@ -17,7 +17,7 @@ const AbilityLabel = styled.img`
     margin: 30px 0px 0px 20px;
 
         @media (max-width: 600px) {
-        margin: 15px 0px 0 15px;
+        margin: 10px 0px 0 15px;
     }
 `
 
@@ -33,7 +33,7 @@ const AbilityName = styled.h2`
     @media (max-width: 600px) {
         font-size: 24px;
         line-height: 20px;
-        margin: 15px 0 10px 5px;
+        margin: 10px 0 10px 5px;
     }
 `
 
@@ -42,15 +42,15 @@ const AbilityText = styled.p`
     top: 59%;
     margin: 0 35px;
     font-family: monospace;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
 
-    @media (max-width: 420px) {
+    @media (max-width: 450px) {
         margin: 0 30px;
         font-size: 12px;
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 340px) {
         margin: 0 20px;
         font-size: 11px;
     }

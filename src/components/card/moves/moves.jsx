@@ -13,7 +13,6 @@ const MoveList = styled.ul`
     }
 
     @media (max-width: 400px) {
-        top: 71%;
     }
 `
 
@@ -43,6 +42,10 @@ const MoveIconImg = styled.img`
 
     @media (max-width: 600px) {
         width: 24px;
+    }
+
+    @media (max-width: 400px) {
+        width: 20px;
     }
 `
 
