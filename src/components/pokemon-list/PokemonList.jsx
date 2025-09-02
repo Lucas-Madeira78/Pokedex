@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import arrow from "../../images/arrow.png"
 import Filter from "../filter/Filter";
 import ListContainer from "./listContainer/listContainer";
+import { useLocation } from "react-router-dom";
 
 const Wrapper = styled.div`
     display: flex;
@@ -44,8 +45,9 @@ const Img = styled.img`
 
 
 const PokemonList = () => {
+    const location = useLocation()
     const [pokemonList, setPokemonList] = useState();
-    const [limit, setLimit] = useState(10);
+    const [limit, setLimit] = useState(location.state?.id || 10);
     const [filterSelect, setFilterSelect] = useState("")
 
     useEffect(() => {
@@ -60,6 +62,7 @@ const PokemonList = () => {
                 setPokemonList(data)                
             }
         }
+        console.log(location.state?.id);
         fetchPokemonData(); 
     }, [limit, filterSelect])
 

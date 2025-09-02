@@ -6,13 +6,6 @@ import Home from './pages/Home';
 import ThemeProvider from './context/ThemeContext';
 
 function App() {
-  const [pokemonLimit, setPokemonLimit] = useState();
-
-  useEffect(() => {
-    
-  })
-
-
   return (
     <>
       <ThemeProvider>

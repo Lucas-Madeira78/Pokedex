@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 const Button = styled(Link)`
     display: flex;
@@ -38,8 +39,10 @@ const Button = styled(Link)`
 `
 
 const ReturnButton = () => {
+    const location = useLocation()
+
     return (
-        <Button to={"/"}><em>Return</em></Button>
+        <Button to={"/"} state={{ id: location.state?.id }}><em>Return</em></Button>
     )
 }
 

@@ -13,6 +13,7 @@ const MoveList = styled.ul`
     }
 
     @media (max-width: 400px) {
+        top: 70%;
     }
 `
 

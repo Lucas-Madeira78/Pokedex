@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Pokemon from "../../pokemon/pokemon";
+import { useEffect, useRef } from "react";
 
 const Container = styled.div`
     display: grid;
@@ -33,8 +34,16 @@ const Container = styled.div`
 `
 
 const ListContainer = ({ list }) => {
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        if (containerRef.current && list?.length) {
+            containerRef.current.scrollTop = containerRef.current.scrollHeight;
+        }
+    }, [list])
+
     return (
-        <Container>
+        <Container ref={containerRef}>
             {list ? (
                 list.map((__, index) => (
                     <div data-testid="pokemon-card" key={index}>

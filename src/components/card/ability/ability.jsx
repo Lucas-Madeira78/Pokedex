@@ -35,6 +35,11 @@ const AbilityName = styled.h2`
         line-height: 20px;
         margin: 10px 0 10px 5px;
     }
+
+    @media (max-width: 400px) {
+        font-size: 18px;
+        line-height: 20px;
+    }
 `
 
 const AbilityText = styled.p`
@@ -45,7 +50,7 @@ const AbilityText = styled.p`
     font-size: 14px;
     font-weight: bold;
 
-    @media (max-width: 450px) {
+    @media (max-width: 600px) {
         margin: 0 30px;
         font-size: 12px;
     }

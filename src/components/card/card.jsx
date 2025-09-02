@@ -3,7 +3,7 @@ import PokemonName from "./pokemonName/pokemonName"
 import TypeIcon from "./typeIcon/typeIcon"
 import PokemonImg from "./pokemonImage/pokemonImg"
 import bgImage from "../../constants/bgImage"
-import Moves from "./moves/Moves"
+import Moves from "./moves/moves"
 import Ability from "./ability/ability"
 import ReturnButton from "./returnBtn/returnButton"
 

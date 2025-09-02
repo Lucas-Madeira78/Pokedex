@@ -43,7 +43,7 @@ const StyledLink = styled(Link)`
 
 const Pokemon = ( {listItem, list} ) => {
     return (
-        <Container as={StyledLink} to={`/card/${list[listItem]?.name}`}>
+        <Container as={StyledLink} to={`/card/${list[listItem]?.name}`} state={{ id: list[listItem]?.id }}>
             {list ? 
                 (<Img src={list[listItem]?.sprites.front_default ? list[listItem].sprites.front_default : list[listItem]?.sprites.other.home.front_default} alt="Pokemon not found"/>) 
                 : 
