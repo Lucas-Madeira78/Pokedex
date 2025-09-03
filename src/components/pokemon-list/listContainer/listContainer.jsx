@@ -33,6 +33,16 @@ const Container = styled.div`
     }
 `
 
+const Loading = styled.div`
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    margin: 10px;
+    background-color: #009350;
+`
+
 const ListContainer = ({ list }) => {
     const containerRef = useRef(null);
 
@@ -43,17 +53,19 @@ const ListContainer = ({ list }) => {
     }, [list])
 
     return (
-        <Container ref={containerRef}>
-            {list ? (
-                list.map((__, index) => (
+        list ? (
+            <Container ref={containerRef}>
+                {list.map((__, index) => (
                     <div data-testid="pokemon-card" key={index}>
                         <Pokemon listItem={index} list={list} />
                     </div>
-                ))
+                ))}
+            </Container>    
             ) : (
-                <p>Carregando pokemons...</p>
-            )}
-        </Container>
+                <Loading>
+                    <p>Carregando pokemons...</p>
+                </Loading>
+        )
     )
 }
 

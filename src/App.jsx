@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { GlobalStyle } from './styles/global';
 import { Routes, Route } from 'react-router-dom';
 import PokemonCard from './pages/pokemonCard';

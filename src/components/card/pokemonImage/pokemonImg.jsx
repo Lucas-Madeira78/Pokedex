@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import pokeBall from "/icons/pokeball.svg"
 
 const Img = styled.img`
     position: absolute;
@@ -13,8 +14,18 @@ const Img = styled.img`
 `
 
 const PokemonImg = ({ pokemon }) => {
+    const imgSrc = () => {
+        if (pokemon.sprites.other.dream_world.front_default) {
+            return pokemon.sprites.other.dream_world.front_default
+        } else if (pokemon.sprites.other.home.front_default) {
+            return pokemon.sprites.other.home.front_default
+        } else {
+            return ""
+        }
+    }
+
     return (
-        <Img src={pokemon.sprites.other.dream_world.front_default ? pokemon.sprites.other.dream_world.front_default : pokemon.sprites.other.home.front_default} alt="pokemon" />
+        <Img src={imgSrc() || pokeBall} alt="pokemon" />
     )
 }
 

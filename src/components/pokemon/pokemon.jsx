@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import pokeBall from "/icons/pokeball.svg"
 
 const Container = styled.div`
 
 `
 
 const Img = styled.img`
-    max-width: 125px;
+    max-width: 96px;
 `
 
 const Name = styled.p`
@@ -42,10 +43,20 @@ const StyledLink = styled(Link)`
 `
 
 const Pokemon = ( {listItem, list} ) => {
+    const imgSrc = () => {
+        if (list[listItem]?.sprites.front_default) {
+            return list[listItem]?.sprites.front_default
+        } else if (list[listItem]?.sprites.other.home.front_default) {
+            return list[listItem]?.sprites.other.home.front_default
+        } else {
+            return ""
+        }
+    }
+
     return (
         <Container as={StyledLink} to={`/card/${list[listItem]?.name}`} state={{ id: list[listItem]?.id }}>
             {list ? 
-                (<Img src={list[listItem]?.sprites.front_default ? list[listItem].sprites.front_default : list[listItem]?.sprites.other.home.front_default} alt="Pokemon not found"/>) 
+                (<Img src={imgSrc() || pokeBall} alt="Pokemon not found"/>) 
                 : 
                 <Loading>Carregando...</Loading>}
             {list ? <Name>{list[listItem]?.name}</Name> : "Pokemon not found"}
