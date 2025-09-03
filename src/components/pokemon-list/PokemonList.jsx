@@ -48,7 +48,7 @@ const PokemonList = () => {
     const location = useLocation()
     const [pokemonList, setPokemonList] = useState();
     const [limit, setLimit] = useState(location.state?.id || 10);
-    const [filterSelect, setFilterSelect] = useState("")
+    const [filterSelect, setFilterSelect] = useState(location.state?.filterSelected || "")
 
     useEffect(() => {
         async function fetchPokemonData() {
@@ -71,8 +71,8 @@ const PokemonList = () => {
 
     return (
         <Wrapper>
-            <Filter onChange={(e) => setFilterSelect(e.target.value)} />
-            <ListContainer list={pokemonList} />
+            <Filter selected={filterSelect} onChange={(e) => setFilterSelect(e.target.value)} />
+            <ListContainer list={pokemonList} filter={filterSelect} />
             <Img role="button" src={arrow} onClick={loadMore} />
         </Wrapper>
     )

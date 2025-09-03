@@ -20,13 +20,14 @@ const Option = styled.option`
     background-color: ${props => props.theme.background};
     font-size: 15px;
     color: ${props => props.theme.color};
+    text-transform: capitalize;
 `
 
-const Filter = ({ onChange }) => {
+const Filter = ({ onChange, selected }) => {
     return (
         <>
             <Select onChange={onChange}>
-            <Option value="">No filter</Option>
+            <Option value="">{selected.charAt(0).toUpperCase() + selected.slice(1) || "No filter"}</Option>
             <Option value="bug">Bug</Option>
             <Option value="dark">Dark</Option>
             <Option value="dragon">Dragon</Option>

@@ -42,7 +42,7 @@ const ReturnButton = () => {
     const location = useLocation()
 
     return (
-        <Button to={"/"} state={{ id: location.state?.id }}><em>Return</em></Button>
+        <Button to={"/"} state={{ id: location.state?.id, filterSelected: location.state?.filterSelect }}><em>Return</em></Button>
     )
 }
 

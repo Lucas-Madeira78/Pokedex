@@ -43,11 +43,11 @@ const Loading = styled.div`
     background-color: #009350;
 `
 
-const ListContainer = ({ list }) => {
+const ListContainer = ({ list, filter }) => {
     const containerRef = useRef(null);
 
     useEffect(() => {
-        if (containerRef.current && list?.length) {
+        if (containerRef.current && list?.length && !filter) {
             containerRef.current.scrollTop = containerRef.current.scrollHeight;
         }
     }, [list])
@@ -57,7 +57,7 @@ const ListContainer = ({ list }) => {
             <Container ref={containerRef}>
                 {list.map((__, index) => (
                     <div data-testid="pokemon-card" key={index}>
-                        <Pokemon listItem={index} list={list} />
+                        <Pokemon listItem={index} list={list} filter={filter} />
                     </div>
                 ))}
             </Container>    

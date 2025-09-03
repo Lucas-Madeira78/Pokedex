@@ -42,7 +42,7 @@ const StyledLink = styled(Link)`
     color: inherit;
 `
 
-const Pokemon = ( {listItem, list} ) => {
+const Pokemon = ( {listItem, list, filter} ) => {
     const imgSrc = () => {
         if (list[listItem]?.sprites.front_default) {
             return list[listItem]?.sprites.front_default
@@ -54,7 +54,7 @@ const Pokemon = ( {listItem, list} ) => {
     }
 
     return (
-        <Container as={StyledLink} to={`/card/${list[listItem]?.name}`} state={{ id: list[listItem]?.id }}>
+        <Container as={StyledLink} to={`/card/${list[listItem]?.name}`} state={{ id: list[listItem]?.id, filterSelect: filter }}>
             {list ? 
                 (<Img src={imgSrc() || pokeBall} alt="Pokemon not found"/>) 
                 : 
